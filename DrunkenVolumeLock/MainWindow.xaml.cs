@@ -29,6 +29,7 @@ namespace DrunkenVolumeLock
         private const int DEFAULT_MAX_VOL = 80;
 
         private bool IsLocked = false;
+        private bool IsMinimized = false;
 
         private int _actualVol;
         private int VolumeActual
@@ -118,5 +119,31 @@ namespace DrunkenVolumeLock
             btn_lockMaxVol.Content = TEXT_BTN_LOCK;
         }
 
+        // minimize to system tray when applicaiton is closed
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // setting cancel to true will cancel the close request
+            // so the application is not closed
+            e.Cancel = true;
+
+            minimizeToTray();
+
+            base.OnClosing(e);
+        }
+
+        // minimize to system tray when applicaiton is minimized
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            if (WindowState == WindowState.Minimized) minimizeToTray();           
+        }
+
+        private void minimizeToTray()
+        {
+            if (!IsMinimized)
+            {
+                this.Hide();
+                IsMinimized = true;
+            }
+        }
     }
 }

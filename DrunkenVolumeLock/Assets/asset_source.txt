@@ -1,2 +1,3 @@
 ﻿lock.ico https://www.iconfinder.com/icons/314692/lock_icon
 unlock.ico https://www.iconfinder.com/icons/314693/lock_open_icon
+main.ico https://www.iconfinder.com/icons/1054973/audio_speaker_volume_icon
