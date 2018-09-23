@@ -26,7 +26,7 @@ namespace DrunkenVolumeLock
 
         private const string ICO_LOCK_PATH = "Assets/lock.ico";
         private const string ICO_UNLOCK_PATH = "Assets/unlock.ico";
-        private const int DEFAULT_MAX_VOL = 90;
+        private const int DEFAULT_MAX_VOL = 80;
 
         private bool IsLocked = false;
 
