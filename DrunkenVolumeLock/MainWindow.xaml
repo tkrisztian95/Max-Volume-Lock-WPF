@@ -6,7 +6,7 @@
         xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
         xmlns:local="clr-namespace:DrunkenVolumeLock"
         mc:Ignorable="d"
-        Title="Max Volume lock App" Height="250" Width="300">
+        Title="Max Volume lock App" Height="260" Width="300">
     <Grid>
         <Slider x:Name="slider_maxVol" HorizontalAlignment="Left" Margin="-46,122,0,0" VerticalAlignment="Top" Maximum="100" Width="154" RenderTransformOrigin="0.5,0.5" ValueChanged="slider_maxVol_ValueChanged">
             <Slider.RenderTransform>
@@ -19,11 +19,11 @@
             </Slider.RenderTransform>
         </Slider>
         <Button x:Name="btn_lockMaxVol" Content="Lock it" HorizontalAlignment="Left" Margin="58,162,0,0" VerticalAlignment="Top" Width="208" Height="41" FontSize="16" Click="btn_lockMaxVol_Click_1"/>
-        <wpfTool:TimePicker Name="picker_endTime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,64,0,0" Width="115"></wpfTool:TimePicker>
+        <wpfTool:TimePicker Name="picker_endTime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,60,0,0" Width="115" Height="29"></wpfTool:TimePicker>
         <CheckBox Content="PIN required for unlock" HorizontalAlignment="Left" Margin="123,117,0,0" VerticalAlignment="Top"/>
         <Label   Content="Max vol:" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Name ="lbl_maxVol" Content="100%" HorizontalAlignment="Left" Margin="73,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Auto unlock at:" HorizontalAlignment="Left" Margin="58,64,0,0" VerticalAlignment="Top"/>
+        <Label Name ="lbl_maxVol" Content="100%" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Auto unlock at:" HorizontalAlignment="Left" Margin="42,60,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Actual vol lvl:" HorizontalAlignment="Left" Margin="151,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Name="lbl_actualVol" Content="100%" HorizontalAlignment="Left" Margin="237,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Image x:Name="img_lockUnlock" Source="Assets/unlock.ico" HorizontalAlignment="Left" Height="32" Margin="68,108,0,0" VerticalAlignment="Top" Width="32" RenderTransformOrigin="0.361,0.128"/>
