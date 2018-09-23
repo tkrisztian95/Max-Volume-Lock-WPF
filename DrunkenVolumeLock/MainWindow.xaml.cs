@@ -64,6 +64,8 @@ namespace DrunkenVolumeLock
         {
             base.OnInitialized(e);
 
+            ico_trayIcon.TrayMouseDoubleClick += Ico_trayIcon_TrayMouseDoubleClick;
+
             NAudio.CoreAudioApi.MMDeviceEnumerator enumer = new NAudio.CoreAudioApi.MMDeviceEnumerator();
             dev = enumer.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
             dev.AudioEndpointVolume.OnVolumeNotification += AudioEndpointVolume_OnVolumeNotification;
@@ -101,6 +103,11 @@ namespace DrunkenVolumeLock
             else { lockIt(); }
         }
 
+        private void Ico_trayIcon_TrayMouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+            showWindowNormal();
+        }
+
 
         private void lockIt()
         {
@@ -134,7 +141,8 @@ namespace DrunkenVolumeLock
         // minimize to system tray when applicaiton is minimized
         private void Window_StateChanged(object sender, EventArgs e)
         {
-            if (WindowState == WindowState.Minimized) minimizeToTray();           
+            if (WindowState == WindowState.Minimized) minimizeToTray();
+            if (WindowState == WindowState.Normal) showWindowNormal();
         }
 
         private void minimizeToTray()
@@ -143,7 +151,16 @@ namespace DrunkenVolumeLock
             {
                 this.Hide();
                 IsMinimized = true;
+                ico_trayIcon.Visibility = Visibility.Visible;
             }
+        }
+
+        private void showWindowNormal()
+        {
+            this.Show();
+            this.WindowState = WindowState.Normal;
+            IsMinimized = false;
+            ico_trayIcon.Visibility = Visibility.Hidden;
         }
     }
 }
