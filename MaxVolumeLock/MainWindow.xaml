@@ -1,10 +1,10 @@
-﻿<Window x:Class="DrunkenVolumeLock.MainWindow"
+﻿<Window x:Class="MaxVolumeLock.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
-        xmlns:local="clr-namespace:DrunkenVolumeLock"
+        xmlns:local="clr-namespace:MaxVolumeLock"
         xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
         Title="Max Volume lock App" Icon="Assets/main.ico" Height="260" Width="300" ResizeMode="CanMinimize" Closing="Window_Closing" StateChanged="Window_StateChanged">

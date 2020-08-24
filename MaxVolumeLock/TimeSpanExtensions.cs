@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DrunkenVolumeLock
+namespace MaxVolumeLock
 {
     public static class TimespanExtensions
     {

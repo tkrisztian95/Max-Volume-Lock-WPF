@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace DrunkenVolumeLock.Views
+namespace MaxVolumeLock.Views
 {
     /// <summary>
-    /// Interaction logic for LockWindow.xaml
+    /// Interaction logic for UnlockWindow.xaml
     /// </summary>
-    public partial class LockWindow : Window
+    public partial class UnlockWindow : Window
     {
-        public LockWindow()
+        public UnlockWindow()
         {
             InitializeComponent();
         }

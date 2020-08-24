@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DrunkenVolumeLock.Properties
+namespace MaxVolumeLock.Properties
 {
 
 
