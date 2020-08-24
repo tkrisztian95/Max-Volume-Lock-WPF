@@ -30,6 +30,8 @@ namespace MaxVolumeLock
 
         private bool IsLocked = false;
         private bool IsMinimized = false;
+        private bool IsPinRequired = false;
+        private int _pin;
 
         private int _actualVol;
         private int VolumeActual
@@ -111,6 +113,9 @@ namespace MaxVolumeLock
 
         private void lockIt()
         {
+            if (IsPinRequired) { 
+                
+            }
             img_lockUnlock.Source = new BitmapImage(new Uri(ICO_LOCK_PATH, UriKind.Relative));
             IsLocked = true;
             slider_maxVol.IsEnabled = false;
@@ -161,6 +166,16 @@ namespace MaxVolumeLock
             this.WindowState = WindowState.Normal;
             IsMinimized = false;
             ico_trayIcon.Visibility = Visibility.Hidden;
+        }
+
+        private void chb_pinRequired_Click(object sender, RoutedEventArgs e)
+        {
+            this.IsPinRequired = ((CheckBox)sender).IsChecked.Value;
+        }
+
+        private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
