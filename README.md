@@ -1,3 +1,3 @@
-# Max Volume Locker (Legacy WPF app)
+# Max Volume Lock (Legacy WPF app)
 
-Simple utility app for setting up a pin lock in your system maximum volume level. 
+Simple utility app for setting up a PIN lock in your system maximum volume level. 
