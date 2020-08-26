@@ -19,7 +19,7 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Button x:Name="btn_lockMaxVol" Content="Lock volume" HorizontalAlignment="Left" Margin="79,233,0,0" VerticalAlignment="Top" Width="172" Height="41" FontSize="16" Click="btn_lockMaxVol_Click_1"/>
+        <Button x:Name="btn_lockMaxVol" IsDefault="True" Content="Lock volume" HorizontalAlignment="Left" Margin="79,233,0,0" VerticalAlignment="Top" Width="172" Height="41" FontSize="16" Click="btn_lockMaxVol_Click_1"/>
         <wpfTool:TimePicker Name="picker_endTime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="192,134,0,0" Width="115" Height="29"></wpfTool:TimePicker>
         <CheckBox  Name="chb_pinRequired" Content="PIN required to unlock" HorizontalAlignment="Left" Margin="79,194,0,0" VerticalAlignment="Top" Click="chb_pinRequired_Click" FontSize="14"/>
         <Label   Content="Maximum volume level:" HorizontalAlignment="Left" Margin="27,40,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>

@@ -100,8 +100,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SetPinWindow.xaml.cs">
-      <DependentUpon>SetPinWindow.xaml</DependentUpon>
+    <Compile Include="PinWindow.xaml.cs">
+      <DependentUpon>PinWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="TimespanExtensions.cs" />
     <Page Include="MainWindow.xaml">
@@ -116,7 +116,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SetPinWindow.xaml">
+    <Page Include="PinWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

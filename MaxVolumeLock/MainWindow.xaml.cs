@@ -70,7 +70,7 @@ namespace MaxVolumeLock
         {
             if (IsPinRequired)
             {
-                SetPinWindow setPinWindow = new SetPinWindow(this);
+                PinWindow setPinWindow = new PinWindow(this);
                 setPinWindow.Show();
             }
             else
@@ -193,15 +193,25 @@ namespace MaxVolumeLock
             _pin = pin;
         }
 
+        public int getPin()
+        {
+            return _pin;
+        }
+
         public void clearPin()
         {
-            _pin = -1;
+            _pin = 0;
         }
 
         public void toggleVolumeLock()
         {
             if (IsLocked) { unlockMaxVolume(); }
             else { lockMaxVolume(); }
+        }
+
+        public bool getIsLocked()
+        {
+            return IsLocked;
         }
     }
 }
