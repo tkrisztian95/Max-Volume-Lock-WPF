@@ -21,39 +21,6 @@ namespace MaxVolumeLock
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string TEXT_BTN_LOCK = "Lock it";
-        private const string TEXT_BTN_UNLOCK = "Unlock it";
-
-        private const string ICO_LOCK_PATH = "Assets/lock.ico";
-        private const string ICO_UNLOCK_PATH = "Assets/unlock.ico";
-        private const int DEFAULT_MAX_VOL = 80;
-
-        private bool IsLocked = false;
-        private bool IsMinimized = false;
-        private bool IsPinRequired = false;
-        private int _pin;
-
-        private int _actualVol;
-        private int VolumeActual
-        {
-            get { return _actualVol; }
-            set
-            {
-                _actualVol = value;
-                lbl_actualVol.Content = _actualVol + "%";
-            }
-        }
-
-        private int _maxVol;
-        private int VolumeMax
-        {
-            get { return _maxVol; }
-            set
-            {
-                _maxVol = value;
-                lbl_maxVol.Content = _maxVol + "%";
-            }
-        }
 
         private MMDevice dev;
 
@@ -99,36 +66,22 @@ namespace MaxVolumeLock
             }
         }
 
-        private void btn_lockMaxVol_Click_1(object sender, RoutedEventArgs e)
+        private async void btn_lockMaxVol_Click_1(object sender, RoutedEventArgs e)
         {
-            if (IsLocked) { unlockIt(); }
-            else { lockIt(); }
+            if (IsPinRequired)
+            {
+                SetPinWindow setPinWindow = new SetPinWindow(this);
+                setPinWindow.Show();
+            }
+            else
+            {
+                toggleVolumeLock();
+            }
         }
 
         private void Ico_trayIcon_TrayMouseDoubleClick(object sender, RoutedEventArgs e)
         {
             showWindowNormal();
-        }
-
-
-        private void lockIt()
-        {
-            if (IsPinRequired) { 
-                
-            }
-            img_lockUnlock.Source = new BitmapImage(new Uri(ICO_LOCK_PATH, UriKind.Relative));
-            IsLocked = true;
-            slider_maxVol.IsEnabled = false;
-            chb_pinRequired.IsEnabled = false;
-            btn_lockMaxVol.Content = TEXT_BTN_UNLOCK;
-        }
-        private void unlockIt()
-        {
-            img_lockUnlock.Source = new BitmapImage(new Uri(ICO_UNLOCK_PATH, UriKind.Relative));
-            IsLocked = false;
-            slider_maxVol.IsEnabled = true;
-            chb_pinRequired.IsEnabled = true;
-            btn_lockMaxVol.Content = TEXT_BTN_LOCK;
         }
 
         // minimize to system tray when applicaiton is closed
@@ -150,6 +103,53 @@ namespace MaxVolumeLock
             if (WindowState == WindowState.Normal) showWindowNormal();
         }
 
+        private void chb_pinRequired_Click(object sender, RoutedEventArgs e)
+        {
+            this.IsPinRequired = ((CheckBox)sender).IsChecked.Value;
+        }
+
+    }
+
+    /// <summary>
+    /// Window state and data 
+    /// </summary>
+    public partial class MainWindow
+    {
+
+        private const string TEXT_BTN_LOCK = "Lock it";
+        private const string TEXT_BTN_UNLOCK = "Unlock it";
+
+        private const string ICO_LOCK_PATH = "Assets/lock.ico";
+        private const string ICO_UNLOCK_PATH = "Assets/unlock.ico";
+        private const int DEFAULT_MAX_VOL = 80;
+
+        private int _actualVol;
+        private int VolumeActual
+        {
+            get { return _actualVol; }
+            set
+            {
+                _actualVol = value;
+                lbl_actualVol.Content = _actualVol + "%";
+            }
+        }
+
+        private int _maxVol;
+        private int VolumeMax
+        {
+            get { return _maxVol; }
+            set
+            {
+                _maxVol = value;
+                lbl_maxVol.Content = _maxVol + "%";
+            }
+        }
+
+        private bool IsLocked = false;
+        private bool IsMinimized = false;
+        private bool IsPinRequired = false;
+        private int _pin;
+
         private void minimizeToTray()
         {
             if (!IsMinimized)
@@ -159,7 +159,6 @@ namespace MaxVolumeLock
                 ico_trayIcon.Visibility = Visibility.Visible;
             }
         }
-
         private void showWindowNormal()
         {
             this.Show();
@@ -168,14 +167,41 @@ namespace MaxVolumeLock
             ico_trayIcon.Visibility = Visibility.Hidden;
         }
 
-        private void chb_pinRequired_Click(object sender, RoutedEventArgs e)
+        private void lockMaxVolume()
         {
-            this.IsPinRequired = ((CheckBox)sender).IsChecked.Value;
+            if (IsPinRequired)
+            {
+
+            }
+            img_lockUnlock.Source = new BitmapImage(new Uri(ICO_LOCK_PATH, UriKind.Relative));
+            IsLocked = true;
+            slider_maxVol.IsEnabled = false;
+            chb_pinRequired.IsEnabled = false;
+            btn_lockMaxVol.Content = TEXT_BTN_UNLOCK;
+        }
+        private void unlockMaxVolume()
+        {
+            img_lockUnlock.Source = new BitmapImage(new Uri(ICO_UNLOCK_PATH, UriKind.Relative));
+            IsLocked = false;
+            slider_maxVol.IsEnabled = true;
+            chb_pinRequired.IsEnabled = true;
+            btn_lockMaxVol.Content = TEXT_BTN_LOCK;
         }
 
-        private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        public void setPin(int pin)
         {
+            _pin = pin;
+        }
 
+        public void clearPin()
+        {
+            _pin = -1;
+        }
+
+        public void toggleVolumeLock()
+        {
+            if (IsLocked) { unlockMaxVolume(); }
+            else { lockMaxVolume(); }
         }
     }
 }
