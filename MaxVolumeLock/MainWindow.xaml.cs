@@ -89,10 +89,7 @@ namespace MaxVolumeLock
             // setting cancel to true will cancel the close request
             // so the application is not closed
             e.Cancel = true;
-
             minimizeToTray();
-
-            base.OnClosing(e);
         }
 
         // minimize to system tray when applicaiton is minimized
