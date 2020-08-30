@@ -26,6 +26,6 @@
         <Label Content="Actual volume level:" HorizontalAlignment="Left" Margin="27,9,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.781,-3.185"/>
         <Label Name="lbl_actualVol" Content="100%" HorizontalAlignment="Left" Margin="200,9,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <Image x:Name="img_lockUnlock" Source="Assets/unlock.ico" HorizontalAlignment="Left" Height="41" Margin="262,20,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.361,0.128"/>
-        <tb:TaskbarIcon Name="ico_trayIcon" Visibility="Hidden" IconSource="Assets/main.ico" />
+        <tb:TaskbarIcon Name="ico_trayIcon" ToolTipText="Max Volume lock" Visibility="Hidden" IconSource="Assets/main.ico" />
     </Grid>
 </Window>
