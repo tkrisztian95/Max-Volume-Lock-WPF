@@ -43,7 +43,6 @@ namespace MaxVolumeLock
             VolumeMax = DEFAULT_MAX_VOL;
 
             slider_maxVol.Value = VolumeMax;
-            picker_endTime.Value = DateTime.Now.AddHours(2);
         }
 
         private void slider_maxVol_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

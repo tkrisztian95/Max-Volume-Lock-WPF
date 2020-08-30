@@ -78,7 +78,6 @@ namespace MaxVolumeLock
             IsLocked = true;
             slider_maxVol.IsEnabled = false;
             chb_pinRequired.IsEnabled = false;
-            picker_endTime.IsEnabled = false;
             btn_lockMaxVol.Content = TEXT_BTN_UNLOCK;
         }
         private void unlockMaxVolume()
@@ -87,7 +86,6 @@ namespace MaxVolumeLock
             IsLocked = false;
             slider_maxVol.IsEnabled = true;
             chb_pinRequired.IsEnabled = true;
-            picker_endTime.IsEnabled = true;
             btn_lockMaxVol.Content = TEXT_BTN_LOCK;
         }
 

@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:MaxVolumeLock"
         xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Title="Max Volume lock" Icon="Assets/main.ico" Height="324.076" Width="341.742" ResizeMode="CanMinimize" Closing="Window_Closing" StateChanged="Window_StateChanged">
+        Title="Max Volume lock" Icon="Assets/main.ico" Height="284.822" Width="341.742" ResizeMode="CanMinimize" Closing="Window_Closing" StateChanged="Window_StateChanged">
     <Grid Margin="0,0,0.2,-0.6">
         <Image x:Name="img_speakerIco" Source="Assets/main.ico" HorizontalAlignment="Left" Height="41" Margin="29,74,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.361,0.128"/>
         <Slider x:Name="slider_maxVol" HorizontalAlignment="Left" Margin="79,85,0,0" VerticalAlignment="Top" Maximum="100" Width="235" RenderTransformOrigin="0.5,0.5" ValueChanged="slider_maxVol_ValueChanged">
@@ -19,12 +19,10 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Button x:Name="btn_lockMaxVol" IsDefault="True" Content="Lock volume" HorizontalAlignment="Left" Margin="79,233,0,0" VerticalAlignment="Top" Width="172" Height="41" FontSize="16" Click="btn_lockMaxVol_Click_1"/>
-        <wpfTool:TimePicker Name="picker_endTime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="192,134,0,0" Width="115" Height="29"></wpfTool:TimePicker>
-        <CheckBox  Name="chb_pinRequired" Content="PIN required to unlock" HorizontalAlignment="Left" Margin="79,194,0,0" VerticalAlignment="Top" Click="chb_pinRequired_Click" FontSize="14"/>
+        <Button x:Name="btn_lockMaxVol" IsDefault="True" Content="Lock volume" HorizontalAlignment="Left" Margin="79,178,0,0" VerticalAlignment="Top" Width="172" Height="41" FontSize="16" Click="btn_lockMaxVol_Click_1"/>
+        <CheckBox  Name="chb_pinRequired" Content="PIN required to unlock" HorizontalAlignment="Left" Margin="79,140,0,0" VerticalAlignment="Top" Click="chb_pinRequired_Click" FontSize="14"/>
         <Label   Content="Maximum volume level:" HorizontalAlignment="Left" Margin="27,40,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <Label Name ="lbl_maxVol" Content="100%" HorizontalAlignment="Left" Margin="200,40,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.169,0.663"/>
-        <Label Content="Auto unlock after time:" HorizontalAlignment="Left" Margin="27,134,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Actual volume level:" HorizontalAlignment="Left" Margin="27,9,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.781,-3.185"/>
         <Label Name="lbl_actualVol" Content="100%" HorizontalAlignment="Left" Margin="200,9,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <Image x:Name="img_lockUnlock" Source="Assets/unlock.ico" HorizontalAlignment="Left" Height="41" Margin="262,20,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.361,0.128"/>
