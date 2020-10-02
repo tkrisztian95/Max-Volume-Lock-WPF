@@ -40,6 +40,11 @@ namespace MaxVolumeLock
             }
         }
 
+        private void OnLoaded(object sender, EventArgs e)
+        {
+            this.pinInput.Focus();
+        }
+
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -47,16 +52,17 @@ namespace MaxVolumeLock
 
         private void toggleLockWithPinButton_Click(object sender, RoutedEventArgs e)
         {
+            if (String.IsNullOrEmpty(pinInput.Password))
+            {
+                return;
+            }
+
             if (!mainWindow.getIsLocked())
             {
                 mainWindow.setPin(int.Parse(pinInput.Password));
             }
             else
-            {
-                if (String.IsNullOrEmpty(pinInput.Password))
-                {
-                    return;
-                }
+            {               
                 if (mainWindow.getPin() == int.Parse(pinInput.Password))
                 {
                     mainWindow.clearPin();

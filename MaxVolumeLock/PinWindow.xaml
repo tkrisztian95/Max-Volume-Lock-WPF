@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MaxVolumeLock"
         mc:Ignorable="d"
+        Loaded="OnLoaded"
         Title="PIN lock" Height="214.267" Width="353.502">
     <Grid>
         <Label x:Name="titleLabel" Content="Provide PIN required to unlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,45,0,0" FontSize="14" RenderTransformOrigin="0.637,-0.611"/>
