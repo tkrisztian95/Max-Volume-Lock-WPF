@@ -53,6 +53,10 @@ namespace MaxVolumeLock
             }
             else
             {
+                if (String.IsNullOrEmpty(pinInput.Password))
+                {
+                    return;
+                }
                 if (mainWindow.getPin() == int.Parse(pinInput.Password))
                 {
                     mainWindow.clearPin();
