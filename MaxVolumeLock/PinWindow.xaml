@@ -9,7 +9,7 @@
         Title="PIN lock" Height="214.267" Width="353.502">
     <Grid>
         <Label x:Name="titleLabel" Content="Provide PIN required to unlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,45,0,0" FontSize="14" RenderTransformOrigin="0.637,-0.611"/>
-        <PasswordBox x:Name="pinInput" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Width="100" Margin="215,45,0,0" TabIndex="0" MaxLength="4" Height="29"></PasswordBox>
+        <PasswordBox x:Name="pinInput" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Width="100" Margin="215,45,0,0" TabIndex="0" MaxLength="4" Height="29" PreviewTextInput="pinInput_PreviewTextInput"></PasswordBox>
         <TextBlock x:Name="pinInputErrorTextBlock" Text="Invalid PIN!" Visibility="Hidden" Foreground="MediumVioletRed" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="147,79,0,0" FontSize="14" RenderTransformOrigin="0.637,-0.611"/>
         <Button x:Name="toggleLockWithPinButton" IsDefault="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="215,119,0,0" Height="30" Background="AliceBlue" Click="toggleLockWithPinButton_Click"/>
         <Button x:Name="cancelButton" IsCancel="True" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cancel" Width="100" Margin="84,119,0,0" Height="30" Click="cancelButton_Click"/>        
