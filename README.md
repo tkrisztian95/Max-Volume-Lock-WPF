@@ -9,13 +9,15 @@ Simple utility app for PIN lock your system maximum volume.
 
 ## Screenshots
 
+![Screenshot](screenshots/how-it-works.gif)
+
 ### Main form
 Simply set your desired maximum volume level with the slider and click on the `Lock Volume` button.
 
-![Screenshot1](screenshots/main.JPG)
+![Screenshot](screenshots/main.JPG)
 
 Note that: You should check the `PIN required to unlock` checkbox for setting up a PIN code. The PIN code will be requested for unlock.
 
 ### Lock/Unlock with PIN
 
-![Screenshot1](screenshots/pinLock.JPG)
+![Screenshot](screenshots/pinLock.JPG)
